@@ -10,7 +10,7 @@ layout: default
 
 <div class="nav-title">
     <div class="float-left fs14">
-        <a href=" {{ baseURL }}/bybbs/index.html">{{ site.name }}</a> » <a href=" {{ baseURL }}/bybbs/n/{{ page.cid }}.html">{{ categoryName }}</a>
+        <a href=" {{ baseURL }}/index.html">{{ site.name }}</a> » <a href=" {{ baseURL }}/n/{{ page.cid }}.html">{{ categoryName }}</a>
     </div>
 
     <div class="c"></div>
@@ -23,13 +23,13 @@ layout: default
             <h1>{{ page.title }}</h1>
 
             <div class="topic-title-date">
-                By <a href=" {{ baseURL }}/bybbs/member/{{ page.authorID }}.html">{{ article_author_info.userName }}</a>
+                By <a href=" {{ baseURL }}/member/{{ page.authorID }}.html">{{ article_author_info.userName }}</a>
                 at {{ page.addTime | date: "%Y-%m-%d" }}
             </div>
         </div>
 
         <div class="detail-avatar">
-            <a href=" {{ baseURL }}/bybbs/member/{{ page.authorID }}.html">
+            <a href=" {{ baseURL }}/member/{{ page.authorID }}.html">
                 <img src="{{ article_author_info.avatar }}" alt="{{ article_author_info.userName }}">
             </a>
         </div>
@@ -63,7 +63,7 @@ layout: default
 
         <div class="commont-item">
             <div class="commont-avatar">
-                <a href=" {{ baseURL }}/bybbs/member/{{ comment.authorID }}.html">
+                <a href=" {{ baseURL }}/member/{{ comment.authorID }}.html">
                     <img src="{{ comment_author_info.avatar }}" alt="{{ comment_author_info.userName }}">
                 </a>
             </div>
@@ -76,7 +76,7 @@ layout: default
 
                 <div class="commont-data-date">
                     <div class="float-left">
-                        <a href=" {{ baseURL }}/bybbs/member/{{ comment.authorID }}.html">{{ comment_author_info.userName }}</a>
+                        <a href=" {{ baseURL }}/member/{{ comment.authorID }}.html">{{ comment_author_info.userName }}</a>
                         at {{ comment.addTime | date: "%Y-%m-%d" }}
                     </div>
 
