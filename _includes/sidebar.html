@@ -1,0 +1,46 @@
+<div class="main-sider">
+
+    <div class="sider-box">
+
+        <div class="sider-box-title">关于</div>
+
+        <div class="sider-box-content">
+            <p>ByBBS = Beyond BBS。一个无需帐户就可以发言的论坛。</p>
+            <div class="btn">
+                <a href="https://github.com/Terminus2021/bybbs">Show on GitHub</a>
+                <a href="https://github.com/Terminus2021/bybbs/archive/bybbs-master.zip">源码下载</a>
+                <a href="feed.xml">RSS订阅</a>
+                <a href="t/1860.html">如何发帖</a>
+                {% if page.collection == "category_info" %}<a href="feed/{{ page.cid }}.xml">订阅此节点</a>{% endif %}
+            </div>
+            <div class="c"></div>
+        </div>
+
+    </div>
+
+    <div class="sider-box">
+
+        <div class="sider-box-title">镜像地址</div>
+
+        <div class="sider-box-content">
+            <p><a href="https://bybbs.github.io{{ page.url }}">https://bybbs.github.io{{ page.url }}</a></p>
+            <div class="c"></div>
+        </div>
+
+    </div>
+
+    <div class="sider-box">
+
+        <div class="sider-box-title">节点 Nodes</div>
+
+        <div class="sider-box-content">
+            <div class="btn">
+                {% for category in site.category_info limit: 20 %}
+                <a href="{{ baseURL }}/n/{{ category.cid }}.html">{{ category.name }}</a>
+                {% endfor %}
+            </div>
+            <div class="c"></div>
+        </div>
+
+    </div>
+</div>

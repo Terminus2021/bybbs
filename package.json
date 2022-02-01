@@ -1,0 +1,26 @@
+{
+  "name": "2049bbs.github.io",
+  "main": "index.html",
+  "dependencies": {
+    "@octokit/rest": "^17.9.0",
+    "fs-extra": "^8.1.0",
+    "youbbs-backup-helper": "git+https://github.com/backup53/youbbs-backup-helper.git"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^8.0.0"
+  },
+  "scripts": {
+    "install": "cd node_modules/youbbs-backup-helper && npm install && npm run build",
+    "backup": "node backup.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2049bbs/2049bbs.github.io.git"
+  },
+  "license": "ISC",
+  "author": "Li Qiang",
+  "bugs": {
+    "url": "https://github.com/2049bbs/2049bbs.github.io/issues"
+  },
+  "homepage": "https://github.com/2049bbs/2049bbs.github.io#readme"
+}

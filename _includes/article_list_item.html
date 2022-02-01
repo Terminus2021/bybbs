@@ -1,0 +1,32 @@
+<div class="post-list">
+
+    {% assign _post_author_info = site.users | where: "userID", article.authorID | first %}
+
+    <div class="item-avatar">
+        <a href="member/{{ article.authorID }}.html">
+            <img src="{{ _post_author_info.avatar }}" alt="{{ _post_author_info.userName }}">
+        </a>
+    </div>
+
+    <div class="item-content">
+        <h1>
+            <a href="t/{{ article.aid }}.html">{{ article.title }}</a>
+        </h1>
+
+        <span class="item-date">
+            <a href="n/{{ article.cid }}.html">{{ article.categories[0] }}</a> • <a href="member/{{ article.authorID }}.html">{{ _post_author_info.userName }}</a>
+            • {{ article.addTime | date: "%Y-%m-%d" }}
+        </span>
+    </div>
+
+    {% assign _post_comment_size = article.comments | size %}
+    {% if _post_comment_size > 0 %}
+    <div class="item-count">
+        <a href="t/{{ article.aid }}.html#reply{{ article.comments | size }}">
+            {{ _post_comment_size }}
+        </a>
+    </div>
+    {% endif %}
+
+    <div class="c"></div>
+</div>

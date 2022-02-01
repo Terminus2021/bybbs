@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+{% include get_baseurl.html %}
+
+{% assign user_articles = site.posts | where: "authorID", page.userID %}
+
+<div class="nav-title">
+    <a href=" {{ baseURL }}/bybbs/index.html">{{ site.name }}</a> » 会员：{{ page.userName }}
+</div>
+
+<div class="main-box">
+
+    <div class="member-avatar">
+        <img src="{{ page.avatar }}" alt="{{ page.userName }}">
+    </div>
+
+    <div class="member-detail">
+        <p>
+            排名：<strong>{{ page.userName }}</strong> (第{{ page.userID }}号会员，{{ page.regTime | date: "%Y-%m-%d" }}加入)
+        </p>
+
+        <p>主帖： {{ user_articles | size }}</p>
+
+        <p>
+            主页： <a href="{{ page.userURL }}" target="_blank" rel="nofollow">{{ page.userURL }}</a>
+        </p>
+
+        <p>概述： <br> {{ content }}</p>
+    </div>
+
+    <div class="c"></div>
+</div>
+
+<div class="nav-title">
+    {{ page.userName }} <a>新帖</a>
+</div>
+
+<div class="main-box home-box-list">
+    {% for article in user_articles limit: 10 %}
+        {% include article_list_item.html %}
+    {% endfor %}
+
+</div>
