@@ -42,7 +42,7 @@ layout: default
 
         <p class="mytag float-left">
             {% for tag in page.tags %}
-            <a href="https://2049bbs.xyz/tag/{{ tag }}">{{ tag }}</a>{% if forloop.last != true %}, {% endif %}
+            <a href="https://github.com/{{ site.github.repository_nwo }}/search=?q+%3A{{ tag }}">{{ tag }}</a>{% if forloop.last != true %}, {% endif %}
             {% endfor %}
         </p>
 
